@@ -1,0 +1,9 @@
+[plink_gwas]
+cmd_path: ${PLINK_PATH}
+bfile:${BFILE}
+regression_model:${REGRESSION_MODEL}
+ci:0.95
+covar_file_name:covar.txt
+covar_list:${COVARIATES_LIST}
+hide_covar:yes
+output_file_name:${OUTPUT_FILE_NAME}
