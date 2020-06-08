@@ -7,7 +7,7 @@
 
 To run the GWAS itself, just edit the below commands and execute!
 
-```bash
+```
 export BFILE=“Type in the prefix of the input file for plink”
 export REGRESSION_MODEL=“Type in the regression model you would like to use, e.g. for binary outcomes please write logistic”
 export COVARIATES_LIST=“Type in the covariates you would like to use, separated by commas e.g. Sex,Age,PC1,PC2,PC3,PC4,PC5”
