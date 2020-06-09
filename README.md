@@ -75,7 +75,7 @@ pheno = pd.read_csv("RAW_test.fam", names=('FID', 'IID', 'PAT', 'MAT', 'SEX', 'P
 pheno_pcs = pd.merge(pheno, pcs, on=('FID', 'IID'), how='left')
 
 # Save the combined file
-pheno_pcs.to_csv(r'/Users/raquelreal/Desktop/Hackthon_IPDGC_2020/covar.txt', header=True, index=False, sep='\t', mode='a')
+pheno_pcs.to_csv(r'covar.txt', header=True, index=False, sep='\t', mode='a')
 
 ```
 To run the script:
