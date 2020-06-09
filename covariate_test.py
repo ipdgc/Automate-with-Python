@@ -14,10 +14,5 @@ print(pheno.head(5))
 pheno_pcs = pd.merge(pheno, pcs, on=('FID', 'IID'), how='left')
 print(pheno_pcs.head(5))
 
-print("pheno dimensions: {}".format(pheno.shape))
-print("pcs dimensions: {}".format(pcs.shape))
-print("pheno_pcs dimensions: {}".format(pheno_pcs.shape))
-len(pheno_pcs)
-
 # Save the combined file
 pheno_pcs.to_csv(r'/Users/raquelreal/Desktop/Hackthon_IPDGC_2020/covar.txt', header=True, index=False, sep='\t', mode='a')
