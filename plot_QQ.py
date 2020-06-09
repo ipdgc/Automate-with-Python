@@ -33,7 +33,12 @@ def plot_QQ(pvals, out_file_name):
 
 def main():
     #QQ calcualtion is based on: https://github.com/GP2-TNC-WG/GP2-Bioinformatics-course/blob/master/Module_III.md#3
-    #python plot_QQ.py -file_name DGI_chr3_pvals.txt -out_file_name QQtest1
+    #the input file should be the output of plink GWAS which is an association file such as:
+    #CHR   SNP              BP        A1       TEST    NMISS         OR       SE      L95      U95         STAT            P
+    #1   1:20991002:C:T   20991002    T        ADD     2000     0.9922    1.424  0.06088    16.17    -0.005522       0.9956
+    #1   1:21009211:C:T   21009211    T        ADD     2000         NA       NA       NA       NA           NA           NA
+    #1   1:21009279:C:T   21009279    T        ADD     2000      1.224    1.416  0.07634    19.63        0.143       0.8863
+    #python plot_QQ.py -file_name Demo_plinkgwas_test1.assoc.logistic -out_file_name DemoQQ
     #read user arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("-file_name", "--file_name",  help="Provide filename with p-values")
@@ -42,8 +47,8 @@ def main():
     print('input file:', args.file_name)
     print('output_file:', args.out_file_name)
 
-    df = pd.read_csv(args.file_name, sep='\t')
-    pvals = df['PVAL']
+    df = pd.read_csv(args.file_name, delim_whitespace=True)
+    pvals = df['P']
     plot_QQ(pvals, args.out_file_name)
 
 main()
