@@ -23,6 +23,8 @@ class Plink_GWAS():
         self.covar_list=[]#this a list
         self.output_file_name=''
         self.hide_covar=''
+        self.pheno_file=''
+        self.pheno_name=''
 
     def init_param_configparser(self, conf_file):
         config = configparser.ConfigParser()
@@ -48,6 +50,13 @@ class Plink_GWAS():
         #self.covar_list=tmpCovar
         self.covar_list=config['plink_gwas']['covar_list']
         #print('list:', self.covar_list)
+        self.pheno_file=config['plink_gwas']['pheno_file']
+        self.pheno_name=config['plink_gwas']['pheno_name']
+        self.allow_no_sex=config['plink_gwas']['allow-no-sex']
+        if(self.allow_no_sex == 'yes'):
+            self.allow_no_sex= ' --allow-no-sex '
+        else:
+            self.hide_covar= ' '
 
 
     def init_param_user():
@@ -59,10 +68,11 @@ class Plink_GWAS():
         cmd = self.cmd_path + 'plink --bfile ' +  self.bfile + ' ' + \
         ' --' + self.regression_model + ' --ci ' + self.ci + ' ' + self.hide_covar + \
         ' --covar ' + self.covar_file_name + ' --covar-name ' + self.covar_list + \
+        ' --pheno ' + self.pheno_file + ' --pheno-name ' + self.pheno_name + \
+        self.allow_no_sex + \
         ' --out ' + self.output_file_name
 
         print('plink gwas cmd:', cmd)
-
         #call the cmd
         subprocess.run(cmd, shell=True)
 
