@@ -4,7 +4,7 @@
 ## Generate a covariate file
 
 ```
-python3 covariate.py 
+python3 covariate_test.py 
 
 ```
 ## Running the GWAS analysis
