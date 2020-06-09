@@ -1,0 +1,12 @@
+[plink_gwas]
+cmd_path:/usr/bin/
+bfile:IMPUTED.HARDCALLS.Demo
+regression_model:logistic
+ci:0.95
+covar_file_name:covar.txt
+covar_list:SEX,PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10
+hide_covar:yes
+output_file_name:Demo_plinkgwas_test1
+pheno_file:pheno.txt
+pheno_name:PHENO
+allow-no-sex:yes
