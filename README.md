@@ -56,6 +56,7 @@ def scree_plot(out_path):
 
     plt.savefig('scree_plot.png')
 ```
+![Example scree plot](scree_plot.png)
 
 ## Generate a covariate file
 
