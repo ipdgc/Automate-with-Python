@@ -1,8 +1,12 @@
 # Automate-with-Python
 “Automate the boring stuff with Python” for Population Genetics
 
+## Generate a covariate file
 
+```
+python3 covariate.py 
 
+```
 ## Running the GWAS analysis
 
 To run the GWAS itself, just edit the below commands and execute!
