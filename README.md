@@ -35,7 +35,8 @@ def generate_PC(geno_path, out_path, exclusion_region):
         subprocess.run(cmd, shell = True)
 ```
 ## Make scree plot  
-To determine optimal number of PCs to use as covariates.
+To determine optimal number of PCs to use as covariates.  
+*out_path = same out_path used in the generate PCs step.*
 ```python
 import matplotlib.pyplot as plt
 import pandas as pd
